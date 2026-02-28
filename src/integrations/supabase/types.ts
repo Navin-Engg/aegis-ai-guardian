@@ -14,7 +14,108 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      analyzed_emails: {
+        Row: {
+          analysis_summary: string | null
+          analyzed_at: string
+          body: string | null
+          confidence_score: number | null
+          created_at: string
+          id: string
+          indicators: Json | null
+          recipient: string | null
+          sender: string
+          subject: string
+          threat_level: string
+          user_id: string
+        }
+        Insert: {
+          analysis_summary?: string | null
+          analyzed_at?: string
+          body?: string | null
+          confidence_score?: number | null
+          created_at?: string
+          id?: string
+          indicators?: Json | null
+          recipient?: string | null
+          sender: string
+          subject: string
+          threat_level?: string
+          user_id: string
+        }
+        Update: {
+          analysis_summary?: string | null
+          analyzed_at?: string
+          body?: string | null
+          confidence_score?: number | null
+          created_at?: string
+          id?: string
+          indicators?: Json | null
+          recipient?: string | null
+          sender?: string
+          subject?: string
+          threat_level?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          two_factor_enabled: boolean
+          two_factor_secret: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          two_factor_enabled?: boolean
+          two_factor_secret?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          two_factor_enabled?: boolean
+          two_factor_secret?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
