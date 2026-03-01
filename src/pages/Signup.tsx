@@ -41,8 +41,8 @@ export default function Signup() {
     if (error) {
       toast({ title: "Signup Failed", description: error.message, variant: "destructive" });
     } else {
-      toast({ title: "Check Your Email", description: "We've sent a verification link to confirm your account." });
-      navigate("/login");
+      toast({ title: "Account Created!", description: "Welcome to AegisAI." });
+      navigate("/dashboard");
     }
   };
 
