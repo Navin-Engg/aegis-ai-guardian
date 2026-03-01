@@ -42,7 +42,7 @@ export default function Signup() {
       toast({ title: "Signup Failed", description: error.message, variant: "destructive" });
     } else {
       toast({ title: "Check Your Email", description: "We've sent a verification link to confirm your account." });
-      navigate("/verify", { state: { email } });
+      navigate("/login");
     }
   };
 
